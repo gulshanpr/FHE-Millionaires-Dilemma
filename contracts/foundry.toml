@@ -1,0 +1,8 @@
+[profile.default]
+src = 'src'
+test = 'src'
+allow_paths = ['../']
+evm_version = 'cancun'
+solc = '0.8.28'
+optimizer = true
+via_ir = true
