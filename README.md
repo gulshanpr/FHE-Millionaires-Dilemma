@@ -1,6 +1,6 @@
 # Millionaires Dilemma
 
-Finds max balance of participant without revealing there actual balance, computation happens on encrypted data.
+Finds max balance of participant without revealing their actual balance, computation happens on encrypted data.
 
 ## Demo
 
@@ -20,14 +20,21 @@ Finds max balance of participant without revealing there actual balance, computa
     </a>
   </p>
 
+- Deployment address, event logs, and async fulfillRequest
+  - [Deployed at](https://sepolia.basescan.org/address/0x6C128287f051783F39729B482FF6D6FE926fF8da)
+  - [Event logs](https://sepolia.basescan.org/address/0x6C128287f051783F39729B482FF6D6FE926fF8da#events)
+  - fulfillRequest from inco screenshot: - 1 signifies, it's a tie - rest three addresses are all participants - topic 1, that is the winner.
+    <p align="center">
+    <img src="./fulfillRequest-image.png" alt="Screenshot" style="max-width: 100%; height: auto;" />
+  </p>
 
 ## How i replicated the setup?
 
 I have cloned [lightning-rod](https://github.com/Inco-fhevm/lightning-rod) and [nextjs-template](https://github.com/Inco-fhevm/nextjs-template.git) templates of inco and just added my Contract [here](./contracts/src/MillionairesDilemma.sol) and added my Test file [here](./contracts/src/test/MillionairesDilemma.t.sol).
 
-For building my contract from `contracts` dir i ran `forge build src/MillionairesDilemma.sol`
+For building my contract from `contracts` dir I ran `forge build src/MillionairesDilemma.sol`
 
-And for testing the contract functionality, cases and flow from the `contracts` dir i ran `forge test --match-path src/test/MillionairesDilemma.t.sol`, it logs:
+And for testing the contract functionality, cases and flow from the `contracts` dir I ran `forge test --match-path src/test/MillionairesDilemma.t.sol`, it logs:
 
 ```
 Ran 9 tests for src/test/MillionairesDilemma.t.sol:TestMillionairesDilemma
@@ -47,6 +54,6 @@ Ran 1 test suite in 10.83ms (7.86ms CPU time): 9 tests passed, 0 failed, 0 skipp
 
 and for seeing the result/logs, `forge test --match-path src/test/MillionairesDilemma.t.sol -vvv`
 
-And for frontend i have used inco [nextjs-starter-repo](https://github.com/Inco-fhevm/nextjs-template.git), change the things a little with minor tweaks. I've used the wallet adaptor as it is.
+And for frontend I have used inco [nextjs-starter-repo](https://github.com/Inco-fhevm/nextjs-template.git), changed the things a little with minor tweaks. I've used the wallet adaptor as it is.
 
-My main components exists in components [folder](./frontend/src/components/) and both the files the core of application
+My main components exist in components [folder](./frontend/src/components/) and both the files are the core of application
