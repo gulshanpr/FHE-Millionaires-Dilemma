@@ -5,13 +5,24 @@ Finds max balance of participant without revealing there actual balance, computa
 ## Demo
 
 - Smart Contract and Test Overview
-  [![Watch the video](https://img.youtube.com/vi/rRi7cJblBQU/hqdefault.jpg)](https://youtu.be/rRi7cJblBQU)
+
+  <p align="center">
+    <a href="https://youtu.be/rRi7cJblBQU">
+      <img src="https://img.youtube.com/vi/rRi7cJblBQU/hqdefault.jpg" alt="Watch the video" />
+    </a>
+  </p>
 
 - Frontend Tour and integration
 
+  <p align="center">
+    <a href="https://www.youtube.com/watch?v=ksXiUM4aWlk">
+      <img src="https://img.youtube.com/vi/ksXiUM4aWlk/hqdefault.jpg" alt="Watch the video" />
+    </a>
+  </p>
+
 ## How i replicated the setup?
 
-I have cloned [lightning-rod](https://github.com/Inco-fhevm/lightning-rod) and [nextjs-template](https://github.com/Inco-fhevm/nextjs-template.git) templates of inco and just added my Contract [here](./contracts/src/MillionairesDilemma.sol) and added my Test file [here](./contracts/src/test/).
+I have cloned [lightning-rod](https://github.com/Inco-fhevm/lightning-rod) and [nextjs-template](https://github.com/Inco-fhevm/nextjs-template.git) templates of inco and just added my Contract [here](./contracts/src/MillionairesDilemma.sol) and added my Test file [here](./contracts/src/test/MillionairesDilemma.t.sol).
 
 For building my contract from `contracts` dir i ran `forge build src/MillionairesDilemma.sol`
 
