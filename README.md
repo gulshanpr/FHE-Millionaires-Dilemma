@@ -1,72 +1,40 @@
-# Lightning Rod
+# Millionaires Dilemma
 
-Lightning Rod is the home of the Dapp Developer Kit (DDK) for Inco Lightning network.
+Finds max balance of participant without revealing there actual balance, computation happens on encrypted data.
 
-<img src="./docs/images/lightning-rod.png" alt="Lightning Rod" width="300" style="float: right; margin-left: 20px; margin-bottom: 20px;">
+## Demo
 
-To start working with Inco Lightning and the Lighting Rod template repository, work through the [Quick Start](#quick-start) section below.
+- Smart Contract and Test Overview
+  [![Watch the video](https://img.youtube.com/vi/rRi7cJblBQU/hqdefault.jpg)](https://youtu.be/rRi7cJblBQU)
 
-Further [documentation](#documentation) is linked below.
+- Frontend Tour and integration
 
-## Documentation
+## How i replicated the setup?
 
-- [Inco Lightning SDK](docs/inco-lightning.md)
+I have cloned [lightning-rod](https://github.com/Inco-fhevm/lightning-rod) and [nextjs-template](https://github.com/Inco-fhevm/nextjs-template.git) templates of inco and just added my Contract [here](./contracts/src/MillionairesDilemma.sol) and added my Test file [here](./contracts/src/test/).
 
-## Quick Start
+For building my contract from `contracts` dir i ran `forge build src/MillionairesDilemma.sol`
 
-### Prerequisites
+And for testing the contract functionality, cases and flow from the `contracts` dir i ran `forge test --match-path src/test/MillionairesDilemma.t.sol`, it logs:
 
-We require recent versions of
+```
+Ran 9 tests for src/test/MillionairesDilemma.t.sol:TestMillionairesDilemma
+[PASS] testAllDifferent() (gas: 1564248)
+[PASS] testAllSame() (gas: 1631053)
+[PASS] testIfAllValueCleanedAfterFindWhoIsRich() (gas: 1635329)
+[PASS] testTwoMaxAndSameThirdMin() (gas: 1551221)
+[PASS] testTwoMinAndSameThirdMax() (gas: 1544057)
+[PASS] testUserCanAccessOwnBalance() (gas: 638629)
+[PASS] test_RevertWhen_Participate_Less_Than_Three_People() (gas: 346022)
+[PASS] test_RevertWhen_Participate_More_Than_Three_People() (gas: 1016225)
+[PASS] test_RevertWhen_UnAuth_Access_Find_Who_Is_Rich() (gas: 540017)
+Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 7.86ms (23.50ms CPU time)
 
-- [Docker](https://www.docker.com/)
-- [Bun](https://bun.sh/)
-- [Foundry](https://getfoundry.sh/)
-
-to be installed.
-
-### Install dependencies
-
-To install the depednencies, run:
-
-```bash
-bun install
+Ran 1 test suite in 10.83ms (7.86ms CPU time): 9 tests passed, 0 failed, 0 skipped (9 total tests)
 ```
 
-### Local test network
+and for seeing the result/logs, `forge test --match-path src/test/MillionairesDilemma.t.sol -vvv`
 
-To run a local test network, you need to have Docker installed. You can use the following command to start the network:
+And for frontend i have used inco [nextjs-starter-repo](https://github.com/Inco-fhevm/nextjs-template.git), change the things a little with minor tweaks. I've used the wallet adaptor as it is.
 
-```bash
-docker compose up
-```
-
-This is useful to deploy your dapp locally and test it in a simulated environment.
-
-### Running simple end-to-end test
-
-This test makes sure your local inco environment works properly.  
-You can run the [`incolite.local.e2e.test.ts`](./test/src/incolite.local.e2e.test.ts) and automatically boot the local test network with:
-
-```bash
-# no need to have docker compose running prior to this command. Have the docker daemon up.
-bun test:e2e
-```
-
-This compiles some contracts with Foundry and run a local Inco Lightning environment (runs the docker compose) in the background.
-
-If you have the docker compose already running in the background, you can run the test like so:
-
-```bash
-cd backend && bun run test:e2e
-```
-
-### Testing a Confidential Smart Contract
-
-An example of a simple confidential token using inco is provided in `contracts/`.  
-To test run:
-
-```bash
-bun install
-cd contracts
-forge test
-```
+My main components exists in components [folder](./frontend/src/components/) and both the files the core of application
