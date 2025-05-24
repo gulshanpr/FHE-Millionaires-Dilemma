@@ -1,0 +1,89 @@
+[
+  {
+    "type": "function",
+    "name": "balanceOf",
+    "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "outputs": [{ "name": "", "type": "bytes32", "internalType": "euint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "callback",
+    "inputs": [
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "winnerIndex", "type": "uint8", "internalType": "uint8" },
+      { "name": "data", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  { "type": "function", "name": "findWhoIsRich", "inputs": [], "outputs": [], "stateMutability": "nonpayable" },
+  {
+    "type": "function",
+    "name": "getParticipantsLength",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "hasSubmitted",
+    "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isEvaluationInProgress",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "participants",
+    "inputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "richest",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "submitBalance",
+    "inputs": [{ "name": "valueInput", "type": "bytes", "internalType": "bytes" }],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "submitBalance",
+    "inputs": [{ "name": "encryptedBalance", "type": "bytes32", "internalType": "euint256" }],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "SubmittedBalance",
+    "inputs": [
+      { "name": "participant", "type": "address", "indexed": true, "internalType": "address" },
+      { "name": "isNew", "type": "bool", "indexed": false, "internalType": "bool" }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "WhoIsTheMillionaire",
+    "inputs": [
+      { "name": "winner", "type": "address", "indexed": true, "internalType": "address" },
+      { "name": "isTie", "type": "bool", "indexed": false, "internalType": "bool" },
+      { "name": "participants", "type": "address[3]", "indexed": false, "internalType": "address[3]" }
+    ],
+    "anonymous": false
+  }
+]
