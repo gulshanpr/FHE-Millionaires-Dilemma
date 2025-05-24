@@ -8,17 +8,18 @@ Finds max balance of participant without revealing there actual balance, computa
 
   <p align="center">
     <a href="https://youtu.be/rRi7cJblBQU">
-      <img src="https://img.youtube.com/vi/rRi7cJblBQU/hqdefault.jpg" alt="Watch the video" />
+      <img src="https://img.youtube.com/vi/rRi7cJblBQU/hqdefault.jpg" alt="Watch the video" style="max-width: 100%; height: auto;"/>
     </a>
   </p>
 
-- Frontend Tour and integration
+- Frontend Tour and Integration
 
   <p align="center">
     <a href="https://www.youtube.com/watch?v=ksXiUM4aWlk">
-      <img src="https://img.youtube.com/vi/ksXiUM4aWlk/hqdefault.jpg" alt="Watch the video" />
+      <img src="https://img.youtube.com/vi/ksXiUM4aWlk/hqdefault.jpg" alt="Watch the video" style="max-width: 100%; height: auto;" />
     </a>
   </p>
+
 
 ## How i replicated the setup?
 
